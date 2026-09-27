@@ -1,0 +1,207 @@
+.hamburger-btn{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1100;
+}
+.hamburger-btn span{
+    width: 26px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger-btn.active span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+.hamburger-btn.active span:nth-child(2){ opacity: 0; }
+.hamburger-btn.active span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+.main-checkout{
+    padding-top: 18vh;
+    padding-bottom: 5vw;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+.checkout-container{
+    width: 90%;
+    max-width: 500px;
+}
+.checkout-container h1{
+    color: white;
+    font-size: 1.8vw;
+    margin-bottom: 20px;
+}
+.checkout-container h3{
+    color: white;
+    font-size: 1vw;
+    margin: 25px 0 15px 0;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+.checkout-container h3:first-of-type{
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+}
+.form-row{
+    display: flex;
+    gap: 15px;
+}
+.form-row .form-group{
+    flex: 1;
+}
+#checkoutForm .form-group{
+    margin-bottom: 15px;
+}
+#checkoutForm .form-group label{
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.8vw;
+    color: #ccc;
+}
+#checkoutForm .form-group input{
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: white;
+    box-sizing: border-box;
+    font-size: 0.85vw;
+}
+.order-total{
+    color: white;
+    font-size: 1.3vw;
+    font-weight: bold;
+    text-align: right;
+    margin: 20px 0;
+    padding-top: 15px;
+    border-top: 1px solid #333;
+}
+.submit-btn{
+    width: 100%;
+    padding: 14px;
+    background-color: white;
+    color: #222;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1vw;
+}
+.submit-btn:hover{
+    background-color: #ddd;
+}
+.form-error{
+    color: #ff6b6b;
+    font-size: 0.85vw;
+    min-height: 18px;
+}
+@media (max-width: 768px) {
+  .submit-btn{
+    font-size: 3.2vw;
+    padding: 12px;
+}
+  .footerminitext{
+    font-size: 4vw;
+    padding: 8px;
+}
+.socials{
+    gap: 20px;
+}
+  header{
+    padding: 0 20px;
+    height: 10vh;
+  }
+  .logo{
+    width: 30vw;
+  }
+  .hamburger-btn{
+    display: flex;
+}
+.nav-menu{
+    display: none;
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    background-color: #222121;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 10px 0;
+    z-index: 999;
+    border-top: 1px solid #333;
+}
+.nav-menu.mobile-open{
+    display: flex;
+}
+.header_info{
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+    font-size: 4.5vw;
+    border-bottom: 1px solid #2a2a2a;
+}
+.header_info:last-child{
+    border-bottom: none;
+}
+  .account-profile{
+    width: 10vw;
+    height: 10vw;
+  }
+  .header-icons{
+    gap: 12px;
+  }
+  .cart-icon{
+    font-size: 6vw;
+  }
+
+  .main-checkout{
+    padding-top: 13vh;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .checkout-container{
+    width: 100%;
+  }
+
+  .checkout-container h1{
+    font-size: 6vw;
+  }
+  .checkout-container h3{
+    font-size: 4vw;
+  }
+
+  .form-row{
+    flex-direction: column;
+    gap: 0;
+  }
+
+  #checkoutForm .form-group label{
+    font-size: 3.5vw;
+  }
+  #checkoutForm .form-group input{
+    font-size: 3.8vw;
+    padding: 10px;
+  }
+
+  .order-total{
+    font-size: 5vw;
+  }
+
+  .submit-btn{
+    font-size: 4vw;
+  }
+
+  .form-error{
+    font-size: 3.3vw;
+  }
+  
+}

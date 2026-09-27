@@ -1,0 +1,250 @@
+.hamburger-btn{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1100;
+}
+.hamburger-btn span{
+    width: 26px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger-btn.active span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+.hamburger-btn.active span:nth-child(2){ opacity: 0; }
+.hamburger-btn.active span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+.main-product{
+    padding-top: 18vh;
+    padding-bottom: 5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.product-container{
+    display: flex;
+    gap: 4vw;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-image-wrap{
+    flex: 1;
+    max-width: 55%;
+}
+.product-image-wrap img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: cover;
+}
+
+.product-details{
+    flex: 1;
+    color: white;
+}
+.product-details .brand{
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9vw;
+    margin: 0 0 10px 0;
+}
+.product-details h1{
+    font-size: 2vw;
+    margin: 0 0 15px 0;
+}
+.product-details .price{
+    font-size: 1.8vw;
+    font-weight: bold;
+    margin: 0 0 25px 0;
+}
+.product-details .description{
+    color: #ccc;
+    font-size: 1vw;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+.product-meta{
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #333;
+}
+.product-meta div{
+    font-size: 0.9vw;
+}
+.product-meta span{
+    display: block;
+    color: #888;
+    font-size: 0.75vw;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.add-to-cart-btn{
+    width: 100%;
+    padding: 16px;
+    background-color: white;
+    color: #222;
+    border: none;
+    border-radius: 6px;
+    font-size: 1vw;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+.add-to-cart-btn:hover{
+    background-color: #ddd;
+}
+.back-link{
+    display: inline-block;
+    color: #888;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 0.9vw;
+}
+.back-link:hover{
+    color: white;
+}
+.loading-text, .error-text{
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 100px 0;
+    font-size: 1.5vw;
+}
+.header_info a{
+    color: white;
+    text-decoration: none;
+}
+.seller-info{
+    color: #888;
+    font-size: 0.85vw;
+    margin-bottom: 20px;
+}
+.seller-info strong{
+    color: white;
+}
+@media (max-width: 768px) {
+    .footerminitext{
+    font-size: 4vw;
+    padding: 8px;
+}
+.socials{
+    gap: 20px;
+}
+  header{
+    padding: 0 20px;
+    height: 10vh;
+  }
+  .logo{
+    width: 30vw;
+  }
+  .hamburger-btn{
+    display: flex;
+}
+.nav-menu{
+    display: none;
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    background-color: #222121;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 10px 0;
+    z-index: 999;
+    border-top: 1px solid #333;
+}
+.nav-menu.mobile-open{
+    display: flex;
+}
+.header_info{
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+    font-size: 4.5vw;
+    border-bottom: 1px solid #2a2a2a;
+}
+.header_info:last-child{
+    border-bottom: none;
+}
+  .account-profile{
+    width: 10vw;
+    height: 10vw;
+  }
+  .header-icons{
+    gap: 12px;
+  }
+  .cart-icon{
+    font-size: 6vw;
+  }
+
+  .main-product{
+    padding-top: 13vh;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .product-container{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .product-image-wrap{
+    max-width: 100%;
+  }
+
+  .product-details .brand{
+    font-size: 3.5vw;
+  }
+  .product-details h1{
+    font-size: 6vw;
+  }
+  .product-details .price{
+    font-size: 6vw;
+  }
+  .product-details .description{
+    font-size: 3.8vw;
+  }
+
+  .product-meta{
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .product-meta div{
+    font-size: 3.5vw;
+  }
+  .product-meta span{
+    font-size: 3vw;
+  }
+
+  .add-to-cart-btn{
+    font-size: 4vw;
+    padding: 14px;
+  }
+
+  .back-link{
+    font-size: 3.5vw;
+  }
+
+  .loading-text, .error-text{
+    font-size: 5vw;
+  }
+
+  .seller-info{
+    font-size: 3.3vw;
+  }
+  
+}

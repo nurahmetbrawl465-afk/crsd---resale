@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+  <header>
+  <img class="logo" src="images/Снимок_экрана___2026-09-24_в_20.19.02-removebg-preview.png" alt="">
+  <nav class="nav-menu" id="navMenu">
+    <p class="header_info"><a href="shop.html">SHOP</a></p>
+    <p class="header_info"><a href="index.html#about">ABOUT</a></p>
+    <p class="header_info"><a href="sell.html">SELL</a></p>
+  </nav>
+  <div class="header-icons">
+    <button class="hamburger-btn" id="hamburgerBtn">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="cart-icon" id="cartIcon">
+      🛒
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+    <img class="account-profile" src="images/profile.png" alt="profile" id="openRegister">
+  </div>
+</header>
+
+  <section class="main-checkout">
+    <div class="checkout-container">
+      <h1>Checkout</h1>
+
+      <form id="checkoutForm">
+        <h3>Shipping details</h3>
+        <div class="form-group">
+          <label for="fullName">Full name</label>
+          <input type="text" id="fullName" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" required>
+          </div>
+        </div>
+
+        <h3>Payment</h3>
+        <div class="form-group">
+          <label for="cardNumber">Card number</label>
+          <input type="text" id="cardNumber" placeholder="4242 4242 4242 4242" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="expiry">Expiry</label>
+            <input type="text" id="expiry" placeholder="MM/YY" required>
+          </div>
+          <div class="form-group">
+            <label for="cvc">CVC</label>
+            <input type="text" id="cvc" placeholder="123" required>
+          </div>
+        </div>
+
+        <div class="order-total" id="orderTotal"></div>
+
+        <p class="form-error" id="checkoutError"></p>
+
+        <button type="submit" class="submit-btn">Confirm payment</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <img class="footer-logo" src="images/Снимок_экрана___2026-09-24_в_20.19.02-removebg-preview.png" alt="CRSD logo">
+      <p class="footerbigtext">Streetwear and archive pieces for those who never blend in.</p>
+      <div class="socials">
+        <a class="footerminitext" href="#">Instagram</a>
+        <a class="footerminitext" href="#">Telegram</a>
+        <a class="footerminitext" href="#">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footercopy">© 2026 CRSD. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="all.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

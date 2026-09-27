@@ -1,0 +1,210 @@
+.hamburger-btn{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1100;
+}
+.hamburger-btn span{
+    width: 26px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger-btn.active span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+.hamburger-btn.active span:nth-child(2){ opacity: 0; }
+.hamburger-btn.active span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+.main-sell{
+    padding-top: 18vh;
+    padding-bottom: 5vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.sell-container{
+    width: 90%;
+    max-width: 500px;
+    background-color: #222121;
+    padding: 40px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    height: fit-content;
+}
+
+.sell-container h1{
+    color: white;
+    margin: 0 0 8px 0;
+    font-size: 1.8vw;
+}
+
+.sell-subtitle{
+    color: #888;
+    margin: 0 0 30px 0;
+    font-size: 0.9vw;
+}
+
+.form-row{
+    display: flex;
+    gap: 15px;
+}
+.form-row .form-group{
+    flex: 1;
+}
+
+#sellForm .form-group label{
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.8vw;
+    color: #ccc;
+}
+#sellForm .form-group input,
+#sellForm .form-group select,
+#sellForm .form-group textarea{
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: white;
+    box-sizing: border-box;
+    font-size: 0.85vw;
+    font-family: inherit;
+}
+#sellForm .form-group input:focus,
+#sellForm .form-group select:focus,
+#sellForm .form-group textarea:focus{
+    outline: none;
+    border-color: #888;
+}
+#sellForm .form-group textarea{
+    resize: vertical;
+}
+.header_info a{
+    color: white;
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+    .submit-btn{
+    font-size: 3.2vw;
+    padding: 12px;
+}
+    #sellForm .form-group{
+    margin-bottom: 18px;
+}
+#sellForm .form-group label{
+    font-size: 3.5vw;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+#sellForm .form-group input,
+#sellForm .form-group select,
+#sellForm .form-group textarea{
+    font-size: 3.8vw;
+    padding: 12px;
+    margin-top: 2px;
+}
+.sell-container h1{
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+.sell-subtitle{
+    margin-bottom: 20px;
+}
+    .footerminitext{
+    font-size: 4vw;
+    padding: 8px;
+}
+.socials{
+    gap: 20px;
+}
+  header{
+    padding: 0 20px;
+    height: 10vh;
+  }
+  .logo{
+    width: 30vw;
+  }
+  .hamburger-btn{
+    display: flex;
+}
+.nav-menu{
+    display: none;
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    background-color: #222121;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 10px 0;
+    z-index: 999;
+    border-top: 1px solid #333;
+}
+.nav-menu.mobile-open{
+    display: flex;
+}
+.header_info{
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+    font-size: 4.5vw;
+    border-bottom: 1px solid #2a2a2a;
+}
+.header_info:last-child{
+    border-bottom: none;
+}
+  .account-profile{
+    width: 10vw;
+    height: 10vw;
+  }
+  .header-icons{
+    gap: 12px;
+  }
+  .cart-icon{
+    font-size: 6vw;
+  }
+
+  .main-sell{
+    padding-top: 13vh;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .sell-container{
+    width: 100%;
+    padding: 25px;
+  }
+
+  .sell-container h1{
+    font-size: 6vw;
+  }
+
+  .sell-subtitle{
+    font-size: 3.5vw;
+  }
+
+  .form-row{
+    flex-direction: column;
+    gap: 0;
+  }
+
+  #sellForm .form-group label{
+    font-size: 3.5vw;
+  }
+  #sellForm .form-group input,
+  #sellForm .form-group select,
+  #sellForm .form-group textarea{
+    font-size: 3.8vw;
+    padding: 10px;
+  }
+  
+  
+}

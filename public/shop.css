@@ -1,0 +1,434 @@
+.hamburger-btn{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1100;
+}
+.hamburger-btn span{
+    width: 26px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger-btn.active span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+.hamburger-btn.active span:nth-child(2){ opacity: 0; }
+.hamburger-btn.active span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+body{
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    background-color: #1a1a1a;
+}
+
+header{
+    width: 100%;
+    background-color: #222121;
+    position: fixed;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 40px;
+    z-index: 1000;
+}
+.logo{ width: 15vw; height: auto; }
+.nav-menu{ display: flex; gap: 40px; }
+.header_info{ color: white; font-size: 1.3vw; margin: 0; }
+.account-profile{
+    width: 6vw; height: 6vw;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.main-shop{
+    padding-top: 18vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 5vw;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.shop-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: white;
+    margin-bottom: 2vw;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+}
+.shop-title h1{
+    margin: 0;
+    font-size: 2.5vw;
+}
+.shop-title p{
+    color: #888;
+    font-size: 0.9vw;
+}
+
+.shop-layout{
+    display: flex;
+    gap: 3vw;
+    align-items: flex-start;
+}
+
+/* Сайдбар фильтров */
+.filters-sidebar{
+    width: 220px;
+    flex-shrink: 0;
+    background-color: #222121;
+    padding: 25px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 18vh;
+}
+.filter-group{
+    margin-bottom: 25px;
+}
+.filter-group h4{
+    color: white;
+    margin: 0 0 12px 0;
+    font-size: 0.9vw;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.filter-group label{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ccc;
+    font-size: 0.9vw;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.filter-group input[type="number"]{
+    width: 45%;
+    padding: 8px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: white;
+    box-sizing: border-box;
+}
+.filter-group select{
+    width: 100%;
+    padding: 8px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: white;
+    box-sizing: border-box;
+}
+.clear-btn{
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid #555;
+    color: #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85vw;
+}
+.clear-btn:hover{
+    border-color: white;
+    color: white;
+}
+
+/* Сетка товаров */
+.product-grid{
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+.product-card{
+    background-color: #222121;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.product-card:hover{
+    transform: translateY(-5px);
+}
+.product-card img{
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    background-color: #333;
+}
+.product-info{
+    padding: 15px;
+}
+.product-brand{
+    color: #888;
+    font-size: 0.75vw;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 5px 0;
+}
+.product-name{
+    color: white;
+    font-size: 0.95vw;
+    margin: 0 0 8px 0;
+}
+.product-price{
+    color: white;
+    font-weight: bold;
+    font-size: 1vw;
+    margin: 0;
+}
+.no-results{
+    color: #888;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 0;
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+
+footer{
+    width: 100%;
+    min-height: 40vh;
+    background-color: #050505;
+    box-sizing: border-box;
+    padding: 5vw 5vw 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.footer-logo{
+    width: 15vw;
+    height: auto;
+    margin-bottom: 2vw;
+    opacity: 0.9;
+}
+.footerbigtext{
+    color: rgb(230, 228, 228);
+    font-size: 1.2vw;
+    font-weight: 300;
+    max-width: 500px;
+    line-height: 1.5;
+    margin: 0 0 2vw 0;
+}
+.socials{
+    display: flex;
+    gap: 30px;
+}
+.footerminitext{
+    color: #aaa;
+    font-size: 1vw;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+.footerminitext:hover{
+    color: white;
+}
+.footer-bottom{
+    width: 100%;
+    border-top: 1px solid #2a2a2a;
+    padding-top: 20px;
+    margin-top: 3vw;
+    text-align: center;
+}
+.footercopy{
+    color: #666;
+    font-size: 0.8vw;
+    margin: 0;
+}
+.header_info a{
+    color: white;
+    text-decoration: none;
+}
+
+
+.header-icons{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.cart-icon{
+    position: relative;
+    font-size: 1.5vw;
+    cursor: pointer;
+    color: white;
+}
+.cart-count{
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #e63946;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 768px) {
+    .footerminitext{
+    font-size: 4vw;
+    padding: 8px;
+}
+.socials{
+    gap: 20px;
+}
+  header{
+    padding: 0 20px;
+    height: 10vh;
+  }
+  .logo{
+    width: 30vw;
+  }
+  .hamburger-btn{
+    display: flex;
+}
+.nav-menu{
+    display: none;
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    background-color: #222121;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 10px 0;
+    z-index: 999;
+    border-top: 1px solid #333;
+}
+.nav-menu.mobile-open{
+    display: flex;
+}
+.header_info{
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+    font-size: 4.5vw;
+    border-bottom: 1px solid #2a2a2a;
+}
+.header_info:last-child{
+    border-bottom: none;
+}
+  .account-profile{
+    width: 10vw;
+    height: 10vw;
+  }
+  .header-icons{
+    gap: 12px;
+  }
+  .cart-icon{
+    font-size: 6vw;
+  }
+
+  .main-shop{
+    padding-top: 13vh;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .shop-title{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .shop-title h1{
+    font-size: 7vw;
+  }
+  .shop-title p{
+    font-size: 3.5vw;
+  }
+
+  .shop-layout{
+    flex-direction: column;
+  }
+
+  .filters-sidebar{
+    width: 100%;
+    position: static; /* sticky не нужен, когда сайдбар не сбоку, а сверху */
+  }
+  .filter-group h4{
+    font-size: 3.5vw;
+  }
+  .filter-group label{
+    font-size: 3.8vw;
+  }
+  .clear-btn{
+    font-size: 3.5vw;
+  }
+
+  .product-grid{
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+  }
+  .product-card img{
+    height: 180px;
+  }
+  .product-brand{
+    font-size: 3vw;
+  }
+  .product-name{
+    font-size: 3.5vw;
+  }
+  .product-price{
+    font-size: 3.8vw;
+  }
+  .no-results{
+    font-size: 5vw;
+  }
+
+  .footer-logo{
+    width: 30vw;
+  }
+  .footerbigtext{
+    font-size: 3.5vw;
+  }
+  .footerminitext{
+    font-size: 3vw;
+  }
+  .footercopy{
+    font-size: 2.8vw;
+  }
+  .product-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+.product-card img{
+    height: 150px;
+}
+  .product-brand{
+    font-size: 2.3vw;
+  }
+  .product-name{
+    font-size: 4.3vw;
+    line-height: 1.3;
+  }
+  .product-price{
+    font-size: 3.3vw;
+  }
+  .product-info{
+    padding: 12px;
+  }
+  
+}

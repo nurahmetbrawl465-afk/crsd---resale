@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>cursiders</title>
+</head>
+<body>
+  <header>
+  <img class="logo" src="images/Снимок_экрана___2026-09-24_в_20.19.02-removebg-preview.png" alt="">
+  <nav class="nav-menu" id="navMenu">
+    <p class="header_info"><a href="shop.html">SHOP</a></p>
+    <p class="header_info"><a href="index.html#about">ABOUT</a></p>
+    <p class="header_info"><a href="sell.html">SELL</a></p>
+  </nav>
+  <div class="header-icons">
+    <button class="hamburger-btn" id="hamburgerBtn">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="cart-icon" id="cartIcon">
+      🛒
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+    <img class="account-profile" src="images/profile.png" alt="profile" id="openRegister">
+  </div>
+</header>
+
+  <section class="main-info">
+    <div class="content">
+      <div class="content-text">
+        <p class="mini-text">introduce yourself - brand shop Astana</p>
+        <h1 class="content-bigtext">YOU NEVER LATE TO BE BETTER</h1>
+        <p class="mini-text">Call out a feature, benefit, or value of your site, then link to a page where people can learn more about it.</p>
+        <a href="shop.html"><button class="cta-btn">Shop now</button></a>
+      </div>
+      <div class="content-image">
+        <img src="images/ArguE CulturE] Noir Glacier Fur Jacket na2256 - Black leather jacket.jpg" alt="product">
+      </div>
+    </div>
+
+    <div class="archive">
+      <div class="archive-text">
+        <div>
+          <h1 class="archivebigtext">FRESH TO<br>THE ARCHIVE</h1>
+          <a class="see-all" href="shop.html">→ see all</a>
+        </div>
+      </div>
+
+      <div class="archive-cards" id="archiveCards">
+        <p class="loading-text">Loading...</p>
+      </div>
+    </div>
+
+    <div class="requests">
+      <div class="requests-header">
+        <h2>Buyer requests - lets change!</h2>
+        <a class="see-all" href="shop.html">→ see all</a>
+      </div>
+
+      <div class="request-cards">
+        <div class="card-r">
+          <h3>Looking for Gucci Horsebit Loafers</h3>
+          <p>38 size shoes new budget 150K tg</p>
+          <a class="cta-link" href="sell.html">Do you have this? →</a>
+        </div>
+        <div class="card-r">
+          <h3>Looking for Gucci Horsebit Loafers</h3>
+          <p>38 size shoes new budget 150K tg</p>
+          <a class="cta-link" href="sell.html">Do you have this? →</a>
+        </div>
+        <div class="card-r">
+          <h3>Looking for Gucci Horsebit Loafers</h3>
+          <p>38 size shoes new budget 150K tg</p>
+          <a class="cta-link" href="sell.html">Do you have this? →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="uploads">
+      <div class="uploads-header">
+        <h2>Recent uploads in<br>our shop</h2>
+        <a class="see-all" href="shop.html">→ see all</a>
+      </div>
+      <p class="uploads-subtitle">Find your style and do not limit yourself</p>
+
+      <div class="slider">
+        <div class="slider-track" id="sliderTrack">
+          <p class="loading-text">Loading...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <img class="footer-logo" src="images/Снимок_экрана___2026-09-24_в_20.19.02-removebg-preview.png" alt="CRSD logo">
+      <p class="footerbigtext">Streetwear and archive pieces for those who never blend in.</p>
+      <div class="socials">
+        <a class="footerminitext" href="#">Instagram</a>
+        <a class="footerminitext" href="#">Telegram</a>
+        <a class="footerminitext" href="#">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footercopy">© 2026 CRSD. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="registerModal">
+    <div class="modal">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <h2 class="modal-title">Create account</h2>
+
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="fullName">Full name</label>
+          <input type="text" id="fullName" required placeholder="John Doe">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required placeholder="you@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required placeholder="At least 8 characters" minlength="8">
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm password</label>
+          <input type="password" id="confirmPassword" required placeholder="Repeat password">
+        </div>
+
+        <p class="form-error" id="formError"></p>
+
+        <button type="submit" class="submit-btn">Sign up</button>
+      </form>
+
+      <p class="modal-footer-text">Already have an account? <a href="#" id="switchToLogin">Log in</a></p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal">
+      <button class="modal-close" id="closeLoginModal">&times;</button>
+      <h2 class="modal-title">Log in</h2>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" required placeholder="you@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" required placeholder="Your password">
+        </div>
+
+        <p class="form-error" id="loginFormError"></p>
+
+        <button type="submit" class="submit-btn">Log in</button>
+      </form>
+
+      <p class="modal-footer-text">Don't have an account? <a href="#" id="switchToRegister">Sign up</a></p>
+    </div>
+  </div>
+
+  <script>
+    // ---- Регистрация ----
+    const modal = document.getElementById('registerModal');
+    const openBtn = document.getElementById('openRegister');
+    const closeBtn = document.getElementById('closeModal');
+    const form = document.getElementById('registerForm');
+    const errorEl = document.getElementById('formError');
+
+    openBtn.addEventListener('click', () => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        window.location.href = 'profile.html';
+      } else {
+        modal.classList.add('active');
+      }
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('active');
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorEl.textContent = '';
+
+      const fullName = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (password !== confirmPassword) {
+        errorEl.textContent = 'Passwords do not match';
+        return;
+      }
+      if (password.length < 8) {
+        errorEl.textContent = 'Password must be at least 8 characters';
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fullName, email, password })
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          errorEl.textContent = data.message || 'Registration failed';
+          return;
+        }
+
+        modal.classList.remove('active');
+        form.reset();
+        alert('Account created successfully!');
+      } catch (err) {
+        errorEl.textContent = 'Server error, try again later';
+      }
+    });
+
+    // ---- Логин ----
+    const loginModal = document.getElementById('loginModal');
+    const closeLoginBtn = document.getElementById('closeLoginModal');
+    const switchToLoginBtn = document.getElementById('switchToLogin');
+    const switchToRegisterBtn = document.getElementById('switchToRegister');
+    const loginForm = document.getElementById('loginForm');
+    const loginErrorEl = document.getElementById('loginFormError');
+
+    switchToLoginBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.remove('active');
+      loginModal.classList.add('active');
+    });
+
+    switchToRegisterBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      loginModal.classList.remove('active');
+      modal.classList.add('active');
+    });
+
+    closeLoginBtn.addEventListener('click', () => {
+      loginModal.classList.remove('active');
+    });
+
+    loginModal.addEventListener('click', (e) => {
+      if (e.target === loginModal) loginModal.classList.remove('active');
+    });
+
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      loginErrorEl.textContent = '';
+
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+
+      try {
+        const res = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          loginErrorEl.textContent = data.message || 'Login failed';
+          return;
+        }
+
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+
+        loginModal.classList.remove('active');
+        loginForm.reset();
+        alert(`Добро пожаловать, ${data.user.fullName}!`);
+      } catch (err) {
+        loginErrorEl.textContent = 'Server error, try again later';
+      }
+    });
+  </script>
+  <script src="all.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

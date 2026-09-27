@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELL</title>
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="sell.css">
+</head>
+<body>
+  <header>
+  <img class="logo" src="images/Снимок_экрана___2026-09-24_в_20.19.02-removebg-preview.png" alt="">
+  <nav class="nav-menu" id="navMenu">
+    <p class="header_info"><a href="shop.html">SHOP</a></p>
+    <p class="header_info"><a href="index.html#about">ABOUT</a></p>
+    <p class="header_info"><a href="sell.html">SELL</a></p>
+  </nav>
+  <div class="header-icons">
+    <button class="hamburger-btn" id="hamburgerBtn">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="cart-icon" id="cartIcon">
+      🛒
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+    <img class="account-profile" src="images/profile.png" alt="profile" id="openRegister">
+  </div>
+</header>
+
+  <section class="main-sell">
+    <div class="sell-container">
+      <h1>List an item for sale</h1>
+      <p class="sell-subtitle">Fill in the details below</p>
+
+      <form id="sellForm">
+        <div class="form-group">
+          <label for="sellBrand">Brand</label>
+          <input type="text" id="sellBrand" required placeholder="e.g. Balenciaga">
+        </div>
+
+        <div class="form-group">
+          <label for="sellName">Item name</label>
+          <input type="text" id="sellName" required placeholder="e.g. Vintage 501 Jeans">
+        </div>
+
+        <div class="form-group">
+          <label for="sellDescription">Description</label>
+          <textarea id="sellDescription" rows="4" placeholder="Condition, size details, etc."></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sellCategory">Category</label>
+            <select id="sellCategory" required>
+              <option value="">Select category</option>
+              <option value="bags">Bags</option>
+              <option value="clothing">Clothing</option>
+              <option value="jeans">Jeans</option>
+              <option value="accessories">Accessories</option>
+              <option value="watches">Watches</option>
+              <option value="glasses">Glasses</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="sellSize">Size</label>
+            <input type="text" id="sellSize" placeholder="e.g. M, 42, one size">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="sellPrice">Price (₸)</label>
+          <input type="number" id="sellPrice" required placeholder="e.g. 55000" min="0">
+        </div>
+
+        <div class="form-group">
+          <label for="sellImage">Image URL</label>
+          <input type="text" id="sellImage" required placeholder="images/myitem.jpg">
+        </div>
+
+        <p class="form-error" id="sellFormError"></p>
+
+        <button type="submit" class="submit-btn">List item</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <img class="footer-logo" src="images/Снимок_экрана___2026-09-24_в_20.19.02-removebg-preview.png" alt="CRSD logo">
+      <p class="footerbigtext">Streetwear and archive pieces for those who never blend in.</p>
+      <div class="socials">
+        <a class="footerminitext" href="#">Instagram</a>
+        <a class="footerminitext" href="#">Telegram</a>
+        <a class="footerminitext" href="#">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footercopy">© 2026 CRSD. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="sell.js"></script>
+  <script src="all.js"></script>
+</body>
+</html>

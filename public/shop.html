@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP</title>
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+  <header>
+  <img class="logo" src="images/Снимок_экрана___2026-09-24_в_20.19.02-removebg-preview.png" alt="">
+  <nav class="nav-menu" id="navMenu">
+    <p class="header_info"><a href="shop.html">SHOP</a></p>
+    <p class="header_info"><a href="index.html#about">ABOUT</a></p>
+    <p class="header_info"><a href="sell.html">SELL</a></p>
+  </nav>
+  <div class="header-icons">
+    <button class="hamburger-btn" id="hamburgerBtn">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="cart-icon" id="cartIcon">
+      🛒
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+    <img class="account-profile" src="images/profile.png" alt="profile" id="openRegister">
+  </div>
+</header>
+
+  <section class="main-shop">
+    <div class="shop-title">
+      <h1>SHOP</h1>
+      <p id="resultsCount">0 items</p>
+    </div>
+
+    <div class="shop-layout">
+      <!-- Сайдбар с фильтрами -->
+      <aside class="filters-sidebar">
+        <div class="filter-group">
+          <h4>Category</h4>
+          <label><input type="checkbox" class="filter-category" value="bags"> Bags</label>
+          <label><input type="checkbox" class="filter-category" value="clothing"> Clothing</label>
+          <label><input type="checkbox" class="filter-category" value="jeans"> Jeans</label>
+          <label><input type="checkbox" class="filter-category" value="accessories"> Accessories</label>
+          <label><input type="checkbox" class="filter-category" value="watches"> Watches</label>
+          <label><input type="checkbox" class="filter-category" value="glasses"> Glasses</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>Price range</h4>
+          <input type="number" id="minPrice" placeholder="Min">
+          <input type="number" id="maxPrice" placeholder="Max">
+        </div>
+
+        <div class="filter-group">
+          <h4>Sort by</h4>
+          <select id="sortSelect">
+            <option value="default">Default</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+
+        <button id="clearFilters" class="clear-btn">Clear filters</button>
+      </aside>
+
+      <!-- Сетка товаров -->
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <img class="footer-logo" src="images/Снимок_экрана___2026-09-24_в_20.19.02-removebg-preview.png" alt="CRSD logo">
+      <p class="footerbigtext">Streetwear and archive pieces for those who never blend in.</p>
+      <div class="socials">
+        <a class="footerminitext" href="#">Instagram</a>
+        <a class="footerminitext" href="#">Telegram</a>
+        <a class="footerminitext" href="#">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footercopy">© 2026 CRSD. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="shop.js"></script>
+  <script src="all.js"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+.hamburger-btn{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1100;
+}
+.hamburger-btn span{
+    width: 26px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger-btn.active span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+.hamburger-btn.active span:nth-child(2){ opacity: 0; }
+.hamburger-btn.active span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+.main-profile{
+    padding-top: 18vh;
+    padding-bottom: 5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+.profile-container{
+    max-width: 900px;
+    margin: 0 auto;
+}
+.profile-header{
+    color: white;
+    margin-bottom: 30px;
+}
+.profile-header h1{
+    font-size: 1.8vw;
+    margin: 0 0 5px 0;
+}
+.profile-header p{
+    color: #888;
+    font-size: 0.9vw;
+    margin: 0;
+}
+.logout-btn{
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: transparent;
+    border: 1px solid #555;
+    color: #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85vw;
+}
+.logout-btn:hover{
+    border-color: white;
+    color: white;
+}
+.profile-tabs{
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 25px;
+}
+.tab-btn{
+    background: none;
+    border: none;
+    color: #888;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 0.9vw;
+    border-bottom: 2px solid transparent;
+}
+.tab-btn.active{
+    color: white;
+    border-bottom-color: white;
+}
+.order-card{
+    background-color: #222121;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    color: white;
+}
+.order-card-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+.order-card-header .order-date{
+    color: #888;
+    font-size: 0.85vw;
+}
+.order-status{
+    background-color: #2d5a3d;
+    color: #7fd99a;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75vw;
+    text-transform: capitalize;
+    height: fit-content;
+}
+.order-item-row{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+.order-item-row img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.order-item-row .item-info{
+    flex: 1;
+    font-size: 0.85vw;
+}
+.order-item-row .item-info .item-brand{
+    color: #888;
+    font-size: 0.7vw;
+}
+.order-total-row{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #333;
+    font-size: 0.95vw;
+}
+.listing-card{
+    background-color: #222121;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    display: flex;
+    color: white;
+}
+.listing-card img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.listing-card-info{
+    padding: 15px;
+    flex: 1;
+}
+.empty-state{
+    color: #888;
+    text-align: center;
+    padding: 60px 0;
+    font-size: 1vw;
+}
+.listing-date{
+    color: #888;
+    font-size: 0.75vw;
+    margin: 5px 0;
+}
+@media (max-width: 768px) {
+    .footerminitext{
+    font-size: 4vw;
+    padding: 8px;
+}
+.socials{
+    gap: 20px;
+}
+  header{
+    padding: 0 20px;
+    height: 10vh;
+  }
+  .logo{
+    width: 30vw;
+  }
+  .hamburger-btn{
+    display: flex;
+}
+.nav-menu{
+    display: none;
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    background-color: #222121;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 10px 0;
+    z-index: 999;
+    border-top: 1px solid #333;
+}
+.nav-menu.mobile-open{
+    display: flex;
+}
+.header_info{
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+    font-size: 4.5vw;
+    border-bottom: 1px solid #2a2a2a;
+}
+.header_info:last-child{
+    border-bottom: none;
+}
+  .account-profile{
+    width: 10vw;
+    height: 10vw;
+  }
+  .header-icons{
+    gap: 12px;
+  }
+  .cart-icon{
+    font-size: 6vw;
+  }
+
+  .main-profile{
+    padding-top: 13vh;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .profile-header h1{
+    font-size: 6vw;
+  }
+  .profile-header p{
+    font-size: 3.5vw;
+  }
+  .logout-btn{
+    font-size: 3.5vw;
+  }
+
+  .profile-tabs{
+    gap: 5px;
+  }
+  .tab-btn{
+    font-size: 3.8vw;
+    padding: 10px 12px;
+  }
+
+  .order-card-header .order-date{
+    font-size: 3.3vw;
+  }
+  .order-status{
+    font-size: 3vw;
+  }
+
+  .order-item-row img{
+    width: 50px;
+    height: 50px;
+  }
+  .order-item-row .item-info{
+    font-size: 3.5vw;
+  }
+  .order-item-row .item-info .item-brand{
+    font-size: 3vw;
+  }
+
+  .order-total-row{
+    font-size: 4vw;
+  }
+
+  .listing-card{
+    flex-direction: column;
+  }
+  .listing-card img{
+    width: 100%;
+    height: 150px;
+  }
+
+  .empty-state{
+    font-size: 4vw;
+  }
+  .listing-date{
+    font-size: 3vw;
+  }
+  
+}
