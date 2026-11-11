@@ -3,11 +3,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const path = require('path');
+const fs = require('fs');
 const User = require('./models/User');
 const Product = require('./models/Product');
 const Order = require('./models/Order');
 const jwt = require('jsonwebtoken');
-
+const multer = require('multer')
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -24,6 +25,28 @@ function authMiddleware(req, res, next) {
     next();
   } catch (err) {
     return res.status(401).json({ message: 'Недействительный токен' });
+  }
+}
+    const UPLOAD_DIR = path.join(__dirname, 'public', 'uploads');
+    fs.mkdirSync(UPLOAD_DIR, { recursive: true });
+    const storage = multer.diskStorage({destination(req, file, cb){cb(null, UPLOAD_DIR)},filename(req, file,cb){const name = (Date.now()+'-'+Math.round(Math.random()*1e9)+path.extname(file.originalname));cb(null, name)}})
+    const upload = multer({
+      storage : storage,
+      limits : {fileSize: 5242880},
+      fileFilter(req, file, cb){ 
+        const file_types = ['image/jpeg','image/png','image/webp'];
+        if (file_types.includes(file.mimetype)){
+          cb(null, true);
+        }
+        else{
+          cb(new Error('Only images allowed'));
+        }
+      }
+    })
+
+function removeUploadedFile(file) {
+  if (file && file.path) {
+    fs.unlink(file.path, () => {});
   }
 }
 
@@ -175,12 +198,20 @@ app.get('/api/products/:id', async (req, res) => {
 });
 
 // Создать товар (выставить на продажу)
-app.post('/api/products', authMiddleware, async (req, res) => {
+app.post('/api/products', authMiddleware,upload.single('image'), async (req, res) => {
   try {
-    const { brand, name, description, category, size, price, image } = req.body;
+    const { brand, name, description, category, size, price } = req.body;
 
-    if (!brand || !name || !category || !price || !image) {
+    if (!req.file) {
+      return res.status(400).json({ message: 'Загрузи фото'});
+    }
+    if (!brand || !name || !category || !price) {
+      removeUploadedFile(req.file);
       return res.status(400).json({ message: 'Заполните обязательные поля' });
+    }
+    if (Number.isNaN(Number(price)) || Number(price) < 0) {
+      removeUploadedFile(req.file);
+      return res.status(400).json({ message: 'Некорректная цена' });
     }
     const newProduct = new Product({
       seller_id: req.userId,
@@ -190,12 +221,13 @@ app.post('/api/products', authMiddleware, async (req, res) => {
       category,
       size,
       price: Number(price),
-      image
+      image :'uploads/' + req.file.filename
     });
     await newProduct.save();
 
     res.status(201).json({ message: 'Товар успешно выставлен', product: newProduct });
   } catch (err) {
+    removeUploadedFile(req.file);
     console.error('Ошибка в создании товара:', err.message);
     res.status(500).json({ message: 'Ошибка сервера' });
   }
@@ -246,6 +278,21 @@ app.get('/api/orders/my', authMiddleware, async (req, res) => {
     res.status(500).json({ message: 'Ошибка сервера' });
   }
 });
+
+app.use((err, req, res, next) => {
+  if (err instanceof multer.MulterError) {
+    const message = err.code === 'LIMIT_FILE_SIZE'
+      ? 'Файл слишком большой (максимум 5 МБ)'
+      : 'Ошибка загрузки файла';
+    return res.status(400).json({ message });
+  }
+  if (err.message === 'Only images allowed') {
+    return res.status(400).json({ message: 'Разрешены только JPG, PNG и WEBP' });
+  }
+  console.error('Необработанная ошибка:', err.message);
+  res.status(500).json({ message: 'Ошибка сервера' });
+});
+
 
 app.listen(PORT, () => {
   console.log(`Сервер запущен: http://localhost:${PORT}`);

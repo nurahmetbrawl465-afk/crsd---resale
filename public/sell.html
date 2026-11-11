@@ -74,8 +74,13 @@
         </div>
 
         <div class="form-group">
-          <label for="sellImage">Image URL</label>
-          <input type="text" id="sellImage" required placeholder="images/myitem.jpg">
+          <label for="sellImage">Photo</label>
+          <label class="dropzone" id="dropzone" for="sellImage">
+            <span class="dropzone-text" id="dropzoneText">Click or drag a photo here<br><small>JPG, PNG or WEBP, up to 5 MB</small></span>
+            <img class="image-preview" id="imagePreview" alt="Preview">
+          </label>
+          <input type="file" id="sellImage" accept="image/jpeg,image/png,image/webp" hidden>
+          <button type="button" class="remove-image-btn" id="removeImageBtn" hidden>Remove photo</button>
         </div>
 
         <p class="form-error" id="sellFormError"></p>

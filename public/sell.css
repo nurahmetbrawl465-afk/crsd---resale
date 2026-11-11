@@ -85,6 +85,84 @@
 #sellForm .form-group textarea{
     resize: vertical;
 }
+/* --- upload photo --- */
+.dropzone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+    padding: 16px;
+    background-color: #333;
+    border: 2px dashed #555;
+    border-radius: 8px;
+    color: #aaa;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+.dropzone:hover,
+.dropzone.dragover{
+    border-color: #999;
+    background-color: #3a3a3a;
+}
+.dropzone-text{
+    font-size: 0.85vw;
+    line-height: 1.6;
+}
+.dropzone-text small{
+    color: #777;
+    font-size: 0.75vw;
+}
+.dropzone.has-image{
+    padding: 8px;
+    border-style: solid;
+}
+.image-preview{
+    display: none;
+    max-width: 100%;
+    max-height: 260px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+.dropzone.has-image .image-preview{
+    display: block;
+}
+.remove-image-btn{
+    margin-top: 8px;
+    background: none;
+    border: none;
+    color: #ff6b6b;
+    font-size: 0.8vw;
+    cursor: pointer;
+    padding: 0;
+}
+.remove-image-btn:hover{
+    text-decoration: underline;
+}
+.submit-btn{
+    width: 100%;
+    padding: 14px;
+    background-color: white;
+    color: #222;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1vw;
+}
+.submit-btn:hover{
+    background-color: #ddd;
+}
+.submit-btn:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.form-error{
+    color: #ff6b6b;
+    font-size: 0.85vw;
+    min-height: 18px;
+}
 .header_info a{
     color: white;
     text-decoration: none;
@@ -94,6 +172,10 @@
     font-size: 3.2vw;
     padding: 12px;
 }
+    .dropzone-text{ font-size: 3.5vw; }
+    .dropzone-text small{ font-size: 3vw; }
+    .remove-image-btn{ font-size: 3.5vw; }
+    .form-error{ font-size: 3.5vw; }
     #sellForm .form-group{
     margin-bottom: 18px;
 }
